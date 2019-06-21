@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Blueprint
 #initializing app
-app = Flask(__name__)
-from app import views
+app = Blueprint('main',__name__)
+from app import views,error
