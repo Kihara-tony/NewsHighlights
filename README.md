@@ -23,6 +23,12 @@
  ~~~
 
  ----------------------
+
+# TECHNOLOGIES USED :satellite:
+
+ Python :snake: : flask
+
+ ----------------
 # BDD :ghost:
 
 |Behavior|input :arrow_up:|output:arrow_down:|
