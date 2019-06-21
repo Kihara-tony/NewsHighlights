@@ -19,5 +19,7 @@ class DevConfig(Config):
     Args:
         config:The parent configuration class
     '''
+    DEBUG = True
+    
 
 
