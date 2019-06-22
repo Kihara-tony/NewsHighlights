@@ -21,3 +21,19 @@ def get_sources():
             sources_results_list = get_sources_response['sources']
             sources_results = process_results(sources_results_list)
     return sources_results
+def process_results(source_list):
+    '''
+    Function that get sources result and transform them to list
+    Args:
+        source_results:A list of sources objects
+    Returns:
+        source_results:A list of sources objects
+    '''
+    source_results = []
+    for source_item in source_list:
+        id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        source_object = Source('id,name,description')
+        source_results.append(source_object)
+    return source_results
