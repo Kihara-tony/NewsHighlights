@@ -1,2 +1,20 @@
-import unittest
-from app.models import Article
+{% extends 'base.html'%}
+{% block content %}
+{% for articles in articles %}
+<div class="col-xs-12 col-sm-6 col-lg-4" style="margin-bottom:20px;">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h1><a href="{{article.url}}">{{article.title}}</a></h1>
+            <h3>author:{{Article.author}} source: {{article.source.name}}</h3>
+        </div>
+        <div class="panel-body">
+            <p>{{article.description}}</p>
+        </div>
+        <div class="panel-footer">
+            <p>time of publishing {{article.publishedat}}</p>
+        </div>
+        <img src="{{article.urlToImage}}" alt="image of article" class="img-responsive" style='height:200px;'>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
