@@ -37,3 +37,10 @@ def process_results(source_list):
         source_object = Source('id,name,description')
         source_results.append(source_object)
     return source_results
+def get_articles(id):
+    '''
+    Function that gets json response to url request
+    '''
+    get_articles_url = base_url_articles.format(id,api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_
