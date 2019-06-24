@@ -12,7 +12,7 @@ def index():
     title = 'News Sources-catchup on whats latest'
     print(newsSource)
     return render_template('index.html',title=title, sources=newsSource)
-@main.route('/article/<string:id>')
+@main.route('/articles/<string:id>')
 def source(id):
     '''
     View source page function that shows its source and details

@@ -1,20 +1,15 @@
 {% extends 'base.html'%}
 {% block content %}
-{% for articles in articles %}
-<div class="col-xs-12 col-sm-6 col-lg-4" style="margin-bottom:20px;">
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h1><a href="{{article.url}}">{{article.title}}</a></h1>
-            <h3>author:{{Article.author}} source: {{article.source.name}}</h3>
-        </div>
-        <div class="panel-body">
-            <p>{{article.description}}</p>
-        </div>
-        <div class="panel-footer">
-            <p>time of publishing {{article.publishedat}}</p>
-        </div>
-        <img src="{{article.urlToImage}}" alt="image of article" class="img-responsive" style='height:200px;'>
-    </div>
+{% for article in articles %}
+<h1>NEWS</h1>
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-">
+    
+        <p class="text-center">
+            <a href="{{article.url}}">
+                <img src="{{ article.urlToImage }}" class="img-responsive"></a></p>
+        <p class="text-center">{{ article.description|truncate(250)}}</p>
+        <p class="text-center">published on {{ article.publishedAt|truncate(20)}}</p>
+        <a href="{{article.url}}" target="blank_" class="btn btn-info" role="button">website</a>
 </div>
 {% endfor %}
 {% endblock %}

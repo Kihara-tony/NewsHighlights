@@ -4,3 +4,6 @@ hi{
 body{
     background-color: gold;
 }
+.col-md-6{
+    border: 2px solid  green;
+}
