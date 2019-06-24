@@ -25,16 +25,16 @@ def process_results(source_list):
     '''
     Function that get sources result and transform them to list
     Args:
-        source_results:A list of sources objects
+    source_results:A list of sources objects
     Returns:
-        source_results:A list of sources objects
+    source_results:A list of sources objects
     '''
     source_results = []
     for source_item in source_list:
         id = source_item.get('id')
         name = source_item.get('name')
         description = source_item.get('description')
-        source_object = Source('id,name,description')
+        source_object = Source(id,name,description)
         source_results.append(source_object)
     return source_results
 def get_articles(id):
@@ -47,20 +47,20 @@ def get_articles(id):
         get_articles_response = json.loads(get_articles_data)
         articles_results = None
         if get_articles_response['articles']:
-            articles_Result_list = get_articles_response['articles']
-            articles_results = process_article_results(articles_Result_list)
+            articles_result_list = get_articles_response['articles']
+            articles_results = process_article_results(articles_result_list)
     return articles_results
 def process_article_results(articles_list):
     articles_results = []
     for article_item in articles_list:
-        source = article_item.get('source')
-        author = article_item.get('author')
-        title = article_item.get('title')
-        description = article_item.get('description')
-        url = article_item.get('url')
-        urlToImage = article_item.get('urlToImage')
-        publishedAt = article_item.get('publishedAt')
-        articles_object = Article(source,author,title,description,publishedAt,url,urlToImage)
+        source=article_item.get('source')
+        author=article_item.get('author')
+        title=article_item.get('title')
+        description=article_item.get('description')
+        url=article_item.get('url')
+        urlToImage=article_item.get('urlToImage')
+        publishedAt=article_item.get('publishedAt')
+        articles_object=Article(source,author,title,description,publishedAt,url,urlToImage)
         articles_results.append(articles_object)
     return articles_results
     

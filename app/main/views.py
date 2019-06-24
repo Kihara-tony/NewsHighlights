@@ -1,6 +1,6 @@
-from flask import render_template,request,redirect,url_for
+from flask import render_template
 from . import main 
-from ..requests import  get_sources,get_articles
+from ..request import  get_sources,get_articles
 
 #views
 @main.route('/')
@@ -8,10 +8,10 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    newsSource = get_sources()
+    newsSource= get_sources()
     title = 'News Sources-catchup on whats latest'
     print(newsSource)
-    return render_template('index.html',title = title, sources = newsSource)
+    return render_template('index.html',title=title, sources=newsSource)
 @main.route('/article/<string:id>')
 def source(id):
     '''
