@@ -8,7 +8,7 @@ class ArticleTest(unittest.TestCase):
         '''
         Set up method that will run before test
         '''
-        self.new_article = Article('Taifa leo','null','Bimunda triangle','null','2019.06.22','null','null')
+        self.new_article = Article()
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article,Article))
 if __name__ == '__main__':

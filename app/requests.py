@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import Source,Articles
+from .models import Source,Article
 api_key = None
 base_url = None
 base_url_articles = None
@@ -60,7 +60,7 @@ def process_article_results(articles_list):
         url = article_item.get('url')
         urlToImage = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
-        articles_object = Articles(source,author,title,description,publishedAt,url,urlToImage)
+        articles_object = Article(source,author,title,description,publishedAt,url,urlToImage)
         articles_results.append(articles_object)
     return articles_results
     
